@@ -1,0 +1,21 @@
+<ActionBar title="Bro where's my phone??" class="action-bar"></ActionBar>
+
+
+<GridLayout rows="auto, *" >
+	<RadListView row="1"  [items]="deviceList" [class.visible]="listLoaded" swipeActions="true" >
+
+		<ng-template let-item="item">
+			<Label [text]="item.name +'   '+ ((item.RSSI+128)/100) +'%'" class="p-15" (itemTap)="onTapCell(item.UUID)"></Label>
+		</ng-template>
+
+		<GridLayout *tkListItemSwipeTemplate columns="*, auto">
+			<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center"
+			 verticalAlignment="center"></ActivityIndicator>
+			<StackLayout id="delete-view" col="1" (tap)="delete($event)" class="delete-view">
+				<Image src="~/images/delete.png"></Image>
+			</StackLayout>
+		</GridLayout>
+
+	</RadListView>
+
+</GridLayout>
