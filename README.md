@@ -2,7 +2,7 @@
 
 Project to make a phone finding phone app.
 
-This app finds different bluetooth devices using a cell phone with bluetooth capabilities.
+This app finds different bluetooth devices using a cell phone with bluetooth capabilities.<br>
 #issues
 
 -Uses LE bluetooth, which is not backwards compatible. Needs bluetooth classic(which doesn't seem support by existing nativescript plugins)
